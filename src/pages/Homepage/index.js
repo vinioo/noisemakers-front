@@ -72,7 +72,7 @@ export default function Homepage() {
           </SecondContent>
         </Container>
       </ContainerFull>
-      <ContainerFull clipRight={true} mt="-80">
+      <ContainerFull clipRight={true} mt="-92">
         <Container>
           <ThirdHeader>
             <h3>Quem usou recomenda</h3>
