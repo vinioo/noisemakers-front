@@ -30,7 +30,6 @@ import Singer2 from "../../assets/images/singer2.jpg";
 export default function Homepage() {
   return (
     <div>
-      <SignupLoginModal></SignupLoginModal>
       <Navbar></Navbar>
       <ContainerFull>
         <Container background="#F2F4F6" height={"auto"}>
