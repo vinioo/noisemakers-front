@@ -6,7 +6,7 @@ import { Secondary } from "./styles";
 export default function SecondaryButton(props) {
   return (
     <Link to={props.path}>
-      <Secondary>
+      <Secondary width={props.width}>
         <p>{props.children}</p>
       </Secondary>
     </Link>

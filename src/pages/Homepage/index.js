@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import PrimaryButton from "../../components/Button/primary";
 import SecondaryButton from "../../components/Button/secondary";
 import CtaButton from "../../components/Button/cta";
+import SignupLoginModal from "../../components/SignupLoginModal";
 
 import { ContainerFull, Container } from "../../style/global";
 import {
@@ -29,6 +30,7 @@ import Singer2 from "../../assets/images/singer2.jpg";
 export default function Homepage() {
   return (
     <div>
+      <SignupLoginModal></SignupLoginModal>
       <Navbar></Navbar>
       <ContainerFull>
         <Container background="#F2F4F6" height={"auto"}>

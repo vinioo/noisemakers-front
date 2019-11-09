@@ -4,7 +4,7 @@ export const Primary = styled.button`
   outline: none;
   border: none;
   background: #2bd4c3;
-  width: 210px;
+  width: ${props => (props.width ? props.width : "210px")};
   height: 50px;
   border-radius: 40px;
   cursor: pointer;
@@ -25,7 +25,7 @@ export const Secondary = styled.button`
   outline: none;
   border: none;
   background: #0d3f67;
-  width: 210px;
+  width: ${props => (props.width ? props.width : "210px")};
   height: 50px;
   border-radius: 40px;
   cursor: pointer;
@@ -46,7 +46,7 @@ export const Cta = styled.button`
   outline: none;
   border: none;
   background: #6b48ff;
-  width: 210px;
+  width: ${props => (props.width ? props.width : "210px")};
   height: 50px;
   border-radius: 40px;
   cursor: pointer;

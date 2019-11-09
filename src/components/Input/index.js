@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-export default function index() {
-    return (
-        <div>
-            
-        </div>
-    )
+import { InputCustom } from "./styles";
+
+export default function Input(props) {
+  return <InputCustom placeholder={props.placeholder}></InputCustom>;
 }
