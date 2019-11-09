@@ -32,4 +32,11 @@ export const ButtonsBase = styled.div`
   width: 26.33%;
   display: flex;
   justify-content: flex-end;
+  p {
+    display: inline-flex;
+    align-items: center;
+  }
+  button {
+    margin-left: 32px;
+  }
 `;

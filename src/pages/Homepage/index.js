@@ -2,6 +2,9 @@ import React from "react";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import PrimaryButton from "../../components/Button/primary";
+import SecondaryButton from "../../components/Button/secondary";
+import CtaButton from "../../components/Button/cta";
 
 import { ContainerFull, Container } from "../../style/global";
 import {
@@ -32,11 +35,13 @@ export default function Homepage() {
           <FirstBase>
             <FirstItem>
               <h2>Seus dias tocando sozinho acabaram.</h2>
-              <p>
-                Cadastre-se no noisemakers e encontre millhares de pessoas com o
-                mesmo objetivo: formar uma banda. Vem fazer barulho!
-              </p>
-              Button
+              <div>
+                <h6>
+                  Cadastre-se no noisemakers e encontre millhares de pessoas com
+                  o mesmo objetivo: formar uma banda. Vem fazer barulho!
+                </h6>
+              </div>
+              <PrimaryButton>Começar!</PrimaryButton>
             </FirstItem>
             <SecondItem>
               <img src={HomeImage} alt="Imagem home piano"></img>
@@ -64,10 +69,11 @@ export default function Homepage() {
             <SecondContentSecondItem>
               <h3>The authorators</h3>
               <h6>
-                A primeira banda formada utilizando a plataforma, os authorators
-                esbanjam talento pelo Brasil a fora.
+                Conheça mais da primeira banda formada utilizando a plataforma,
+                os authorators esbanjam talento pelo Brasil a fora.
               </h6>
-              Button
+              <PrimaryButton>Visitar página</PrimaryButton>
+              <SecondaryButton>Ver no youtube</SecondaryButton>
             </SecondContentSecondItem>
           </SecondContent>
         </Container>
@@ -110,7 +116,7 @@ export default function Homepage() {
             Encontre milhões de pessoas juntas por um único obetivo agora! É
             grátis!
           </h5>
-          button
+          <CtaButton>Vem fazer um som!</CtaButton>
         </FourthContent>
       </ContainerFull>
       <Footer></Footer>

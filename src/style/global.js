@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContainerFull = styled.div`
   width: 100%;
   max-width: 1920px;
+  margin: 0 auto;
   height: ${props => (props.height ? props.height : "auto")};
   background: ${props => (props.background ? props.background : "#F2F4F6")};
   clip-path: ${props =>

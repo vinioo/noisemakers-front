@@ -1,6 +1,7 @@
 import React from "react";
 
 import Logo from "../../components/Logo";
+import PrimaryButton from "../../components/Button/primary";
 
 import { Container } from "../../style/global";
 import {
@@ -27,7 +28,8 @@ export default function Navbar() {
             </ul>
           </ListBase>
           <ButtonsBase>
-            <p>Entrar Button</p>
+            <p>Entrar</p>
+            <PrimaryButton>Cadastrar</PrimaryButton>
           </ButtonsBase>
         </NavbarContent>
       </Container>

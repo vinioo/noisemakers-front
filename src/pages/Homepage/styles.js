@@ -13,8 +13,8 @@ export const FirstItem = styled.div`
     margin-top: 42px;
     margin-bottom: 32px;
   }
-  p {
-    width: 350px;
+  div {
+    width: 500px;
     margin-bottom: 48px;
   }
 `;
@@ -57,8 +57,8 @@ export const SecondContent = styled.div`
 export const SecondContentFirstItem = styled.div`
   width: 60%;
   img {
-    width: 90%;
-    height: 90%;
+    width: 82%;
+    height: 82%;
   }
 `;
 
@@ -72,6 +72,9 @@ export const SecondContentSecondItem = styled.div`
   h6 {
     color: #e2e4e5;
     margin-bottom: 96px;
+  }
+  button {
+    margin: 8px;
   }
 `;
 
