@@ -4,6 +4,7 @@ export const NavbarBase = styled.div`
   width: 100%;
   height: 82px;
   background: #fafafa;
+  color: #042C4D;
 `;
 
 export const NavbarContent = styled.div`

@@ -9,6 +9,7 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f2f4f6;
 }
 
 h1 {
@@ -60,12 +61,18 @@ p {
 }
 
 h5,
+h6,
 p,
 label,
 li {
   font-family: "Source Sans Pro", sans-serif;
   margin: 0;
+  font-weight: 400;
 }
 ul {
   list-style: none;
+}
+
+h3 {
+  font-weight: 400;
 }
