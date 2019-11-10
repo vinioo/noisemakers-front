@@ -27,10 +27,10 @@ import SecondImage from "../../assets/images/second.jpg";
 import Singer1 from "../../assets/images/singer1.jpg";
 import Singer2 from "../../assets/images/singer2.jpg";
 
-export default function Homepage() {
+export default function Homepage({ history }) {
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar history={history}></Navbar>
       <ContainerFull>
         <Container background="#F2F4F6" height={"auto"}>
           <FirstBase>

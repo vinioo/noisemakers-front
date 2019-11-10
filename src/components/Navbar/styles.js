@@ -35,6 +35,7 @@ export const ButtonsBase = styled.div`
   p {
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
   }
   button {
     margin-left: 32px;

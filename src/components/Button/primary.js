@@ -6,7 +6,7 @@ import { Primary } from "./styles";
 export default function PrimaryButton(props) {
   return (
     <Link to={props.path}>
-      <Primary>
+      <Primary onClick={props.onClick}>
         <p>{props.children}</p>
       </Primary>
     </Link>
