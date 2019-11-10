@@ -2,6 +2,8 @@ import React from "react";
 
 import Navbar from "../../components/Navbar";
 import PrimaryButton from "../../components/Button/primary";
+import CtaButton from "../../components/Button/cta";
+import Footer from "../../components/Footer";
 
 import { ContainerFull, Container } from "../../style/global";
 
@@ -9,7 +11,13 @@ import {
   PanelFirstBase,
   PanelFirstContent,
   PanelLeftItem,
-  PanelRightItem
+  PanelRightItem,
+  PanelSecondContent,
+  PanelSecondLeftItem,
+  PanelSecondRightItem,
+  PanelSecondSquaresBase,
+  PanelSecondSquare,
+  PanelSecondInfo
 } from "./styles";
 
 import ImageTest from "../../assets/images/singer1.jpg";
@@ -42,9 +50,36 @@ export default function Panel() {
           </PanelFirstBase>
         </Container>
       </ContainerFull>
-      <ContainerFull>
-          
+      <ContainerFull background="linear-gradient(180.58deg, #335D80 14.83%, #28B0A8 100.46%, #26BFB0 100.47%);">
+        <Container>
+          <PanelSecondContent>
+            <PanelSecondLeftItem>
+              <h5>Descubra mais bandas</h5>
+              <PanelSecondSquaresBase>
+                <PanelSecondSquare />
+                <PanelSecondSquare />
+                <PanelSecondSquare />
+                <PanelSecondSquare />
+                <p>Ver mais</p>
+              </PanelSecondSquaresBase>
+            </PanelSecondLeftItem>
+            <PanelSecondRightItem>
+              <h5>Encontre músicos</h5>
+              <PanelSecondSquaresBase>
+                <PanelSecondSquare />
+                <PanelSecondSquare />
+                <PanelSecondSquare />
+                <PanelSecondSquare />
+              </PanelSecondSquaresBase>
+            </PanelSecondRightItem>
+          </PanelSecondContent>
+          <PanelSecondInfo>
+            <h5>Não encontrou o que desejava? Crie a sua própria banda!</h5>
+            <CtaButton>Criar banda</CtaButton>
+          </PanelSecondInfo>
+        </Container>
       </ContainerFull>
+      <Footer />
     </>
   );
 }

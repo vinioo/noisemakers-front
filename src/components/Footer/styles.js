@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const FooterBase = styled.div`
-    height: 400px;
+    height: 120px;
     background: #042C4D;    
     `
