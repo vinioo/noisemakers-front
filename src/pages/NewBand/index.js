@@ -29,7 +29,7 @@ export default function UserInfo() {
       <Container>
         <UserInfoContent>
           <LeftContent>
-            <h5>Escolha a sua habilidade principal</h5>
+            <h5>Escolha o gênero da banda</h5>
             <SkillContainer>
               <Skill icon={Icon1}>Guitarra</Skill>
               <Skill icon={Icon2}>Violão</Skill>
@@ -42,10 +42,11 @@ export default function UserInfo() {
             </SkillContainer>
           </LeftContent>
           <RightContent>
-            <h5>Complete o seu cadastro</h5>
+            <h5>Complete o cadastro</h5>
             <FormContainer>
               <form>
-                <LightInput placeholder="Descrição"></LightInput>
+                <LightInput placeholder="Nome"></LightInput>
+                <LightInput placeholder="Quantidade de membros"></LightInput>
                 <LightInput placeholder="País"></LightInput>
                 <LightInput placeholder="Cidade"></LightInput>
                 <LightInput placeholder="Estado"></LightInput>

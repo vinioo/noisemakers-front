@@ -5,7 +5,6 @@ import useModal from "../../hooks/useModal";
 import Logo from "../../components/Logo";
 import PrimaryButton from "../../components/Button/primary";
 import LoginModal from "../LoginModal";
-import SignupModal from "../SignupModal";
 
 import { Container } from "../../style/global";
 import {
