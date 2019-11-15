@@ -11,8 +11,20 @@ import { LoginModalBase, LoginModalContent, ModalLabel } from "./styles";
 const LoginModal = ({ isShowing, hide, type, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = async () => {
+
+  const handleLoginSubmit = async e => {
     try {
+      e.preventDefault();
+      const res = await api.post("login", { email, password });
+
+      localStorage.setItem("userId", res.data.id);
+
+      history.push('/panel')
+    } catch (err) {}
+  };
+  const handleSignupSubmit = async e => {
+    try {
+      e.preventDefault();
       const res = await api.post("signup", { email, password });
       history.push("/panel");
     } catch (err) {
@@ -50,7 +62,12 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
                 required={true}
                 onChange={e => setPassword(e.target.value)}
               ></Input>
-              <SecondaryButton width="340px" onClick={handleSubmit}>
+              <SecondaryButton
+                width="340px"
+                onClick={
+                  type === "login" ? handleLoginSubmit : handleSignupSubmit
+                }
+              >
                 {buttonText}
               </SecondaryButton>
               <ModalLabel>{footerText}</ModalLabel>

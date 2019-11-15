@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import Instruments from "../../defines/instruments";
+import { toBase64 } from "../../util";
 
 import Navbar from "../../components/Navbar";
 
 import { Container } from "../../style/global";
 
-import Skill from "../../components/Skill";
+import SkillContainer from "../../components/SkillContainer";
 import LightInput from "../../components/Input/LightInput";
 import FileInput from "../../components/Input/FileInput";
 import PrimaryButton from "../../components/Button/primary";
@@ -13,16 +15,40 @@ import {
   UserInfoContent,
   LeftContent,
   RightContent,
-  SkillContainer,
   FormContainer
 } from "./styles";
 
-import Icon1 from "../../assets/icons/007-cajon 1.svg";
-import Icon2 from "../../assets/icons/016-drum set 1.svg";
-import Icon3 from "../../assets/icons/019-electric guitar 1.svg";
-import Icon4 from "../../assets/icons/026-guitar 1.svg";
-import Icon5 from "../../assets/icons/035-microphone 1.svg";
-export default function UserInfo() {
+import api from "../../services/api";
+export default function NewBand({ history }) {
+  const [description, setDescription] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [image, setImage] = useState("");
+
+  const handleSubmit = async e => {
+    try {
+      e.preventDefault();
+      let imageBase64 = "";
+      if (image) {
+        imageBase64 = await toBase64(image).then(res => res);
+      }
+      const response = await api.post("updateUserInfo", {
+        userId: window.localStorage.getItem("userId") || 1,
+        description: description,
+        mainSkill: 1,
+        picture: imageBase64,
+        country: country,
+        city: city,
+        state: state
+      });
+
+      history.push("/panel");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Navbar></Navbar>
@@ -30,30 +56,34 @@ export default function UserInfo() {
         <UserInfoContent>
           <LeftContent>
             <h5>Escolha o gênero da banda</h5>
-            <SkillContainer>
-              <Skill icon={Icon1}>Guitarra</Skill>
-              <Skill icon={Icon2}>Violão</Skill>
-              <Skill icon={Icon3}></Skill>
-              <Skill icon={Icon5}></Skill>
-              <Skill icon={Icon4}></Skill>
-              <Skill icon={Icon3}></Skill>
-              <Skill icon={Icon5}></Skill>
-              <Skill icon={Icon4}></Skill>
-            </SkillContainer>
+            <SkillContainer itens={Instruments}></SkillContainer>
           </LeftContent>
           <RightContent>
-            <h5>Complete o cadastro</h5>
+            <h5>Complete o seu cadastro</h5>
             <FormContainer>
-              <form>
-                <LightInput placeholder="Nome"></LightInput>
-                <LightInput placeholder="Quantidade de membros"></LightInput>
-                <LightInput placeholder="País"></LightInput>
-                <LightInput placeholder="Cidade"></LightInput>
-                <LightInput placeholder="Estado"></LightInput>
+              <form id="userInfoForm">
+                <LightInput
+                  placeholder="Descrição"
+                  onChange={e => setDescription(e.target.value)}
+                ></LightInput>
+                <LightInput
+                  placeholder="País"
+                  onChange={e => setCountry(e.target.value)}
+                ></LightInput>
+                <LightInput
+                  placeholder="Cidade"
+                  onChange={e => setCity(e.target.value)}
+                ></LightInput>
+                <LightInput
+                  placeholder="Estado"
+                  onChange={e => setState(e.target.value)}
+                ></LightInput>
                 <p>Imagem de perfil</p>
-                <FileInput></FileInput>
+                <FileInput
+                  onChange={e => setImage(e.target.files[0])}
+                ></FileInput>
+                <PrimaryButton onClick={handleSubmit}>Prosseguir</PrimaryButton>
               </form>
-              <PrimaryButton>Prosseguir</PrimaryButton>
             </FormContainer>
           </RightContent>
         </UserInfoContent>

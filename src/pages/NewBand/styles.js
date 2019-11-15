@@ -22,19 +22,13 @@ export const RightContent = styled.div`
   text-align: center;
 `;
 
-export const SkillContainer = styled.div`
-  width: auto;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     label {
       width: 100%;
     }

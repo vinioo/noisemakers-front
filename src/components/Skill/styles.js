@@ -15,6 +15,9 @@ export const SkillBase = styled.div`
   &:hover {
     background: #61f2e3;
   }
+  &.active {
+    background: #61f2e3;
+  }
 `;
 
 export const SkillIcon = styled.img`
