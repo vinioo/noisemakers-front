@@ -7,11 +7,11 @@ export const InputCustom = styled.input`
   width: 340px;
   height: 55px;
   border: 3.5px solid #333333;
+  padding: 0px 24px;
+  font-size: 16px;
+  font-family: "Source Sans Pro", sans-serif;
   ::placeholder {
-    font-family: "Source Sans Pro", sans-serif;
-    padding: 0px 24px;
-    font-size: 16px;
-    color: #335D80;
+    color: #335d80;
     font-weight: 400;
   }
 `;

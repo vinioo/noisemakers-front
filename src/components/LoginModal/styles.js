@@ -13,6 +13,8 @@ export const LoginModalBase = styled.div`
   min-height: 495px;
   background: #fafafa;
   border-radius: 6px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
 `;
 
 export const LoginModalContent = styled.div`

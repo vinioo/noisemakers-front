@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const LogoStyle = styled.h5`
+
+  a {
+  text-decoration: none;
   color: #042C4D;
+  }
   font-style: normal;
   font-weight: 600;
   font-size: 28px;

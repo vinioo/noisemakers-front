@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import PrimaryButton from "../../components/Button/primary";
 import SecondaryButton from "../../components/Button/secondary";
 import CtaButton from "../../components/Button/cta";
-import SignupLoginModal from "../../components/SignupLoginModal";
 
 import { ContainerFull, Container } from "../../style/global";
 import {
@@ -42,7 +41,7 @@ export default function Homepage({ history }) {
                   o mesmo objetivo: formar uma banda. Vem fazer barulho!
                 </h6>
               </div>
-              <PrimaryButton>Começar!</PrimaryButton>
+              <PrimaryButton path="/panel">Começar!</PrimaryButton>
             </FirstItem>
             <SecondItem>
               <img src={HomeImage} alt="Imagem home piano"></img>

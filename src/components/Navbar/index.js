@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
+import useModal from "../../hooks/useModal";
+
 import Logo from "../../components/Logo";
 import PrimaryButton from "../../components/Button/primary";
-import SignupLoginModal from "../../components/SignupLoginModal";
+import LoginModal from "../LoginModal";
+import SignupModal from "../SignupModal";
 
 import { Container } from "../../style/global";
 import {
@@ -12,35 +15,30 @@ import {
   ListBase,
   ButtonsBase
 } from "./styles";
+import { isS } from "xmlchars/xml/1.0/ed5";
 
 export default function Navbar({ history }) {
-  const [signIn, setSignIn] = useState(false);
-  const [signUp, setSignUp] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [type, setType] = useState("");
+  const { isShowing, toggle } = useModal();
 
-  const handleVibile = () => setVisible(true);
-
-  const handleSignIn = () => {
-    setSignUp({ signUp: false });
-    setSignIn({ signIn: true });
-    handleVibile();
+  const handleLogin = () => {
+    setType("login");
+    toggle();
   };
-  const handleSignUp = e => {
-    setSignUp({ signUp: true });
-    setSignIn({ signIn: false });
-    handleVibile();
-  };
-  let LoginModal;
 
-  // if (signIn) {
-  //   LoginModal = <SignupLoginModal login />;
-  // } else {
-  //   LoginModal = <SignupLoginModal signUp />;
-  // }
-  LoginModal = <SignupLoginModal signUp history={history} />;
+  const handleSignup = () => {
+    setType("signup");
+    toggle();
+  };
+
   return (
     <>
-      {visible && LoginModal}
+      <LoginModal
+        isShowing={isShowing}
+        hide={toggle}
+        type={type}
+        history={history}
+      ></LoginModal>
       <NavbarBase>
         <Container>
           <NavbarContent>
@@ -55,8 +53,8 @@ export default function Navbar({ history }) {
               </ul>
             </ListBase>
             <ButtonsBase>
-              <p onClick={handleSignIn}>Entrar</p>
-              <PrimaryButton onClick={handleSignUp}>Cadastrar</PrimaryButton>
+              <p onClick={handleLogin}>Entrar</p>
+              <PrimaryButton onClick={handleSignup}>Cadastrar</PrimaryButton>
             </ButtonsBase>
           </NavbarContent>
         </Container>
