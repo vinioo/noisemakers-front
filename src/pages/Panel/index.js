@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import api from "../../services/api";
+
+import { toImage } from "../../util";
 
 import Navbar from "../../components/Navbar";
 import PrimaryButton from "../../components/Button/primary";
@@ -23,6 +27,18 @@ import {
 import ImageTest from "../../assets/images/singer1.jpg";
 
 export default function Panel() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const getSampleUsers = async () => {
+      const response = await api.get("getAllUserInfoSample");
+      setUsers(response.data);
+    };
+    getSampleUsers();
+  }, []);
+
+  if (users.length > 0) {
+  }
+
   return (
     <>
       <Navbar></Navbar>
@@ -66,10 +82,12 @@ export default function Panel() {
             <PanelSecondRightItem>
               <h5>Encontre músicos</h5>
               <PanelSecondSquaresBase>
-                <PanelSecondSquare />
-                <PanelSecondSquare />
-                <PanelSecondSquare />
-                <PanelSecondSquare />
+                {users.map(user => (
+                  <>
+                    <PanelSecondSquare src={toImage(user.picture)} />
+                  </>
+                ))}
+                <p>Ver mais</p>
               </PanelSecondSquaresBase>
             </PanelSecondRightItem>
           </PanelSecondContent>

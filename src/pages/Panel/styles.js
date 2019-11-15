@@ -65,14 +65,20 @@ export const PanelSecondSquaresBase = styled.div`
     margin-right: 8px;
     font-weight: bold;
     cursor: pointer;
-
   }
 `;
 export const PanelSecondSquare = styled.div`
   width: 47%;
   height: 200px;
-  background: #fafafa;
+  background: url(${props => (props.src ? props.src : "black")});
+  background-position: center;
+  background-size: cover;
   margin-bottom: 16px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.75;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 export const PanelSecondInfo = styled.div`
@@ -86,4 +92,4 @@ export const PanelSecondInfo = styled.div`
   button {
     margin-bottom: 88px;
   }
-`
+`;
