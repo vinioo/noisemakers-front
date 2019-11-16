@@ -14,7 +14,6 @@ import {
   ListBase,
   ButtonsBase
 } from "./styles";
-import { isS } from "xmlchars/xml/1.0/ed5";
 
 export default function Navbar({ history }) {
   const [type, setType] = useState("");
@@ -52,8 +51,16 @@ export default function Navbar({ history }) {
               </ul>
             </ListBase>
             <ButtonsBase>
-              <p onClick={handleLogin}>Entrar</p>
-              <PrimaryButton onClick={handleSignup}>Cadastrar</PrimaryButton>
+              {window.localStorage.getItem("userId") > 0 ? (
+                "logado"
+              ) : (
+                <>
+                  <p onClick={handleLogin}>Entrar</p>
+                  <PrimaryButton onClick={handleSignup}>
+                    Cadastrar
+                  </PrimaryButton>
+                </>
+              )}
             </ButtonsBase>
           </NavbarContent>
         </Container>

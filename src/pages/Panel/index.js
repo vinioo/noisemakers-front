@@ -74,7 +74,7 @@ export default function Panel() {
           </PanelFirstBase>
         </Container>
       </ContainerFull>
-      <ContainerFull background="linear-gradient(180.58deg, #335D80 14.83%, #28B0A8 100.46%, #26BFB0 100.47%);">
+      <ContainerFull boxShadow="0px 15px 10px -15px #111 ">
         <Container>
           <PanelSecondContent>
             <PanelSecondLeftItem>

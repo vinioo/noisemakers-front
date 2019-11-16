@@ -37,7 +37,7 @@ export const PanelSecondContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #fafafa;
+  color: #042c4d;
   padding-bottom: 104px;
 `;
 
@@ -76,6 +76,7 @@ export const PanelSecondSquare = styled(Link)`
   background-position: center;
   background-size: cover;
   margin-bottom: 16px;
+  border-radius: 8px;
   cursor: pointer;
   &:hover {
     opacity: 0.75;
@@ -87,7 +88,7 @@ export const PanelSecondInfo = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: #fafafa;
+  color: #042c4d;
   h5 {
     margin-bottom: 32px;
   }

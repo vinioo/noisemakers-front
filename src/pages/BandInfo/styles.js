@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 export const Title = styled.h4`
   margin-bottom: 8px;
-  border-bottom: 3px solid #2bd4c3;
+  :after {
+    content: "";
+    display: block;
+    width: 50%;
+    padding-top: 8px;
+    border-bottom: 3.5px solid #2bd4c3;
+  }
 `;
 
 export const Panel = styled.div`
@@ -25,7 +31,7 @@ export const PanelContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 380px;
-  color: #fafafa;
+  color: #F2F4F6;
   h6 {
     margin-bottom: 16px;
   }

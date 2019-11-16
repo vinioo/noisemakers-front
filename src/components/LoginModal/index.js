@@ -18,8 +18,7 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
       const res = await api.post("login", { email, password });
 
       localStorage.setItem("userId", res.data.id);
-
-      history.push('/panel')
+      history.push("/panel");
     } catch (err) {}
   };
   const handleSignupSubmit = async e => {
