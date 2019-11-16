@@ -19,6 +19,7 @@ export const Primary = styled.button`
   &:hover {
     background: #26bfb0;
   }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 export const Secondary = styled.button`
@@ -40,6 +41,7 @@ export const Secondary = styled.button`
   &:hover {
     background: #042c4d;
   }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 export const Cta = styled.button`
@@ -61,4 +63,5 @@ export const Cta = styled.button`
   &:hover {
     background: #4b2dcc;
   }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;

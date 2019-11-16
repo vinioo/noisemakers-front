@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Instruments from "../../defines/instruments";
+import Genres from "../../defines/genres";
 import { toBase64 } from "../../util";
 
 import Navbar from "../../components/Navbar";
@@ -20,27 +20,34 @@ import {
 
 import api from "../../services/api";
 export default function NewBand({ history }) {
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [country, setCountry] = useState("");
+  const [members, setMembers] = useState(0);
   const [city, setCity] = useState("");
-  const [state, setState] = useState("");
   const [image, setImage] = useState("");
+  const [banner, setBanner] = useState("");
 
   const handleSubmit = async e => {
     try {
       e.preventDefault();
       let imageBase64 = "";
+      let bannerBase64 = "";
       if (image) {
         imageBase64 = await toBase64(image).then(res => res);
       }
-      const response = await api.post("updateUserInfo", {
+      if (banner) {
+        bannerBase64 = await toBase64(banner).then(res => res);
+      }
+      console.log(city);
+      const response = await api.post("band", {
         userId: window.localStorage.getItem("userId") || 1,
-        description: description,
-        mainSkill: 1,
-        picture: imageBase64,
-        country: country,
+        name: name,
+        genre: 1,
         city: city,
-        state: state
+        qttyMembers: members,
+        description: description,
+        image: imageBase64,
+        bigImage: bannerBase64
       });
 
       history.push("/panel");
@@ -56,31 +63,36 @@ export default function NewBand({ history }) {
         <UserInfoContent>
           <LeftContent>
             <h5>Escolha o gênero da banda</h5>
-            <SkillContainer itens={Instruments}></SkillContainer>
+            <SkillContainer itens={Genres}></SkillContainer>
           </LeftContent>
           <RightContent>
             <h5>Complete o seu cadastro</h5>
             <FormContainer>
               <form id="userInfoForm">
                 <LightInput
-                  placeholder="Descrição"
-                  onChange={e => setDescription(e.target.value)}
+                  placeholder="Nome"
+                  onChange={e => setName(e.target.value)}
                 ></LightInput>
                 <LightInput
-                  placeholder="País"
-                  onChange={e => setCountry(e.target.value)}
+                  placeholder="Quantidade de membros"
+                  onChange={e => setMembers(e.target.value)}
                 ></LightInput>
+
                 <LightInput
                   placeholder="Cidade"
                   onChange={e => setCity(e.target.value)}
                 ></LightInput>
                 <LightInput
-                  placeholder="Estado"
-                  onChange={e => setState(e.target.value)}
+                  placeholder="Descrição"
+                  onChange={e => setDescription(e.target.value)}
                 ></LightInput>
                 <p>Imagem de perfil</p>
                 <FileInput
                   onChange={e => setImage(e.target.files[0])}
+                ></FileInput>
+                <p>Banner do perfil</p>
+                <FileInput
+                  onChange={e => setBanner(e.target.files[0])}
                 ></FileInput>
                 <PrimaryButton onClick={handleSubmit}>Prosseguir</PrimaryButton>
               </form>

@@ -1,14 +1,34 @@
 import styled from "styled-components";
 
 export const Title = styled.h4`
-  margin-top: 40px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
+  border-bottom: 3px solid #2bd4c3;
 `;
 
 export const Panel = styled.div`
   width: 100%;
   height: 310px;
-  background: yellow;
+  background: linear-gradient(
+      122deg,
+      rgba(51, 51, 51, 1) 22%,
+      rgba(0, 0, 0, 0) 54%
+    ),
+    url(${props => (props.src ? props.src : "black")});
+  background-size: cover;
+  background-position: center;
+  padding: 16px 32px;
+  box-sizing: border-box;
+`;
+
+export const PanelContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 380px;
+  color: #fafafa;
+  h6 {
+    margin-bottom: 16px;
+  }
 `;
 
 export const BandInfoContent = styled.div`
@@ -59,7 +79,7 @@ export const BandInfoRightSide = styled.div`
   flex-direction: column;
   text-align: right;
   textarea {
-      height: 120px;
-      margin-bottom: 32px;
+    height: 120px;
+    margin-bottom: 32px;
   }
 `;

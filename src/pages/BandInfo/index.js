@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Navbar from "../../components/Navbar";
 import PrimaryButton from "../../components/Button/primary";
@@ -14,18 +14,38 @@ import {
   BandInfoLeftSideContent,
   BandInfoRightSide,
   BandMember,
-  MemberInfo
+  MemberInfo,
+  PanelContent
 } from "./styles";
 
 import ImageTest from "../../assets/images/singer1.jpg";
+import api from "../../services/api";
+import SecondaryButton from "../../components/Button/secondary";
+import CtaButton from "../../components/Button/cta";
 
-export default function BandInfo() {
+export default function BandInfo({ match }) {
+  const [bandInfo, setBandInfo] = useState({});
+  useEffect(() => {
+    const getBandInfo = async () => {
+      const response = await api.get(`/band/${match.params.id}`);
+      setBandInfo(response.data);
+    };
+    getBandInfo();
+  }, []);
+  console.log(bandInfo);
   return (
     <ContainerFull>
       <Navbar></Navbar>
       <Container>
-        <Title>The authorators</Title>
-        <Panel></Panel>
+        <Panel src={bandInfo.bigImage}>
+          <PanelContent>
+            <Title>{bandInfo.name}</Title>
+            <h6>{bandInfo.description}</h6> 
+            <p>Cidade: {bandInfo.city}</p>
+            <p>Gênero: {bandInfo.genre}</p>
+            <p>Membros:{bandInfo.qttyMembers}</p>
+          </PanelContent>
+        </Panel>
         <BandInfoContent>
           <BandInfoLeftSide>
             <h5>Integrantes</h5>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import api from "../../services/api";
 
@@ -28,12 +29,19 @@ import ImageTest from "../../assets/images/singer1.jpg";
 
 export default function Panel() {
   const [users, setUsers] = useState([]);
+  const [bands, setBands] = useState([]);
+
   useEffect(() => {
     const getSampleUsers = async () => {
       const response = await api.get("getAllUserInfoSample");
       setUsers(response.data);
     };
+    const getSampleBands = async () => {
+      const response = await api.get("getAllBandInfoSample");
+      setBands(response.data);
+    };
     getSampleUsers();
+    getSampleBands();
   }, []);
 
   if (users.length > 0) {
@@ -72,10 +80,14 @@ export default function Panel() {
             <PanelSecondLeftItem>
               <h5>Descubra mais bandas</h5>
               <PanelSecondSquaresBase>
-                <PanelSecondSquare />
-                <PanelSecondSquare />
-                <PanelSecondSquare />
-                <PanelSecondSquare />
+                {bands.map(band => (
+                  <>
+                    <PanelSecondSquare
+                      to={`/bandinfo/${band.id}`}
+                      src={toImage(band.image)}
+                    />
+                  </>
+                ))}
                 <p>Ver mais</p>
               </PanelSecondSquaresBase>
             </PanelSecondLeftItem>

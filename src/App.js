@@ -14,7 +14,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Homepage} />
           <Route path="/panel" component={Panel} />
-          <Route path="/bandinfo" component={BandInfo} />
+          <Route path="/bandinfo/:id" component={BandInfo} />
           <Route path="/userinfo" component={UserInfo} />
           <Route path="/newband" component={NewBand} />
         </Switch>

@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const PanelFirstBase = styled.div`
   h4 {
     margin-top: 56px;
     margin-bottom: 32px;
   }
+  color: #042c4d;
 `;
 
 export const PanelFirstContent = styled.div`
@@ -67,10 +69,10 @@ export const PanelSecondSquaresBase = styled.div`
     cursor: pointer;
   }
 `;
-export const PanelSecondSquare = styled.div`
+export const PanelSecondSquare = styled(Link)`
   width: 47%;
   height: 200px;
-  background: url(${props => (props.src ? props.src : "black")});
+  background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(${props => (props.src ? props.src : "black")});
   background-position: center;
   background-size: cover;
   margin-bottom: 16px;

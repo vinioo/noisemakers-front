@@ -26,6 +26,7 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   form {
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
