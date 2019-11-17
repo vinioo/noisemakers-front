@@ -6,7 +6,7 @@ export const InputCustom = styled.input`
   border-radius: 50px;
   width: 340px;
   height: 55px;
-  border: 3.5px solid #333333;
+  border: 3.5px solid #042c4d;
   padding: 0px 24px;
   font-size: 16px;
   font-family: "Source Sans Pro", sans-serif;
@@ -23,7 +23,7 @@ export const LightInputBase = styled.input`
   width: 340px;
   height: 55px;
   background: transparent;
-  border: 1.5px solid #333333;
+  border: 1.5px solid #042c4d;
   padding: 0px 24px;
   font-size: 16px;
   font-family: "Source Sans Pro", sans-serif;

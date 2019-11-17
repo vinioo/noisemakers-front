@@ -3,10 +3,17 @@ import ReactDOM from "react-dom";
 import api from "../../services/api";
 
 import Logo from "../Logo";
-import Input from "../Input";
+import LightInput from "../Input/LightInput";
 import SecondaryButton from "../Button/secondary";
 
-import { LoginModalBase, LoginModalContent, ModalLabel } from "./styles";
+import CloseIcon from "../../assets/icons/error.svg";
+
+import {
+  LoginModalBase,
+  LoginModalContent,
+  ModalLabel,
+  CloseIconBase
+} from "./styles";
 
 const LoginModal = ({ isShowing, hide, type, history }) => {
   const [email, setEmail] = useState("");
@@ -48,19 +55,20 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
         <>
           <LoginModalBase>
             <LoginModalContent>
-              <Logo onClick={hide}></Logo>
-              <Input
+              <Logo></Logo>
+              <CloseIconBase src={CloseIcon} onClick={hide}></CloseIconBase>
+              <LightInput
                 placeholder="Email"
                 required={true}
                 type="email"
                 onChange={e => setEmail(e.target.value)}
-              ></Input>
-              <Input
+              ></LightInput>
+              <LightInput
                 placeholder="Senha"
                 type="password"
                 required={true}
                 onChange={e => setPassword(e.target.value)}
-              ></Input>
+              ></LightInput>
               <SecondaryButton
                 width="340px"
                 onClick={
