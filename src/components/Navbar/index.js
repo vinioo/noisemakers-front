@@ -12,7 +12,11 @@ import {
   NavbarContent,
   LogoBase,
   ListBase,
-  ButtonsBase
+  ButtonsBase,
+  UserContainer,
+  UserImage,
+  UserInfo,
+  UserAlert
 } from "./styles";
 
 export default function Navbar({ history }) {
@@ -52,7 +56,11 @@ export default function Navbar({ history }) {
             </ListBase>
             <ButtonsBase>
               {window.localStorage.getItem("userId") > 0 ? (
-                "logado"
+                <UserContainer>
+                  <UserInfo> Vinicius Oliveira</UserInfo>
+                  <UserAlert></UserAlert>
+                  <UserImage />
+                </UserContainer>
               ) : (
                 <>
                   <p onClick={handleLogin}>Entrar</p>

@@ -25,17 +25,18 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
       const res = await api.post("login", { email, password });
 
       localStorage.setItem("userId", res.data.id);
-      history.push("/panel");
+      history.push("/userInfo");
     } catch (err) {}
   };
   const handleSignupSubmit = async e => {
     try {
       e.preventDefault();
       const res = await api.post("signup", { email, password });
-      history.push("/panel");
+      localStorage.setItem("userId", res.data.id);
+      history.push("/userInfo");
     } catch (err) {
       // props.history.push("/");
-      // TODO: React toast ereror
+      // TODO: React toast erepanelror
     }
   };
 
