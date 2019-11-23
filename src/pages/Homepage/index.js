@@ -18,13 +18,15 @@ import {
   ThirdHeader,
   ThirdContent,
   ThirdItem,
-  FourthContent
+  FourthContent,
+  PersonImage
 } from "./styles";
 
 import HomeImage from "../../assets/images/home.png";
 import SecondImage from "../../assets/images/second.jpg";
-import Singer1 from "../../assets/images/singer1.jpg";
-import Singer2 from "../../assets/images/singer2.jpg";
+import Boy1 from "../../assets/images/boy1.jpg";
+import Boy2 from "../../assets/images/boy2.jpg";
+import Woman1 from "../../assets/images/woman1.jpg";
 
 export default function Homepage({ history }) {
   return (
@@ -85,21 +87,21 @@ export default function Homepage({ history }) {
           </ThirdHeader>
           <ThirdContent>
             <ThirdItem>
-              <img src={Singer1}></img>
+              <PersonImage image={Boy1}></PersonImage>
               <h5>
                 "Sem comentários! Plataforma excelente! Recomendo Fortemente!"
               </h5>
               <p>- Vinicius Oliveira</p>
             </ThirdItem>
             <ThirdItem>
-              <img src={Singer2}></img>
+              <PersonImage image={Boy2}></PersonImage>
               <h5>
                 "Lorem Ipsum é simplesmente uma simulação de texto da indústria"
               </h5>
               <p>- Vinicius</p>
             </ThirdItem>
             <ThirdItem>
-              <img src={Singer2}></img>
+              <PersonImage image={Woman1}></PersonImage>
               <h5>
                 "Lorem Ipsum é simplesmente uma simulação de texto da indústria
                 tipográfica"
@@ -109,7 +111,7 @@ export default function Homepage({ history }) {
           </ThirdContent>
         </Container>
       </ContainerFull>
-      <ContainerFull background="#1EE3CF">
+      <ContainerFull>
         <FourthContent>
           <h3>O mundo está a sua espera</h3>
           <h5>

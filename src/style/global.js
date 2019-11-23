@@ -12,6 +12,7 @@ export const ContainerFull = styled.div`
     props.clipRight && "polygon(0 10%, 100% 0%, 100% 100%, 0% 100%)"};
   margin-top: ${props => props.mt && `${props.mt}px`};
   box-shadow: ${props => props.boxShadow && props.boxShadow};
+  border-bottom: ${props => props.borderBottom && props.borderBottom};
 `;
 export const Container = styled.div`
   margin-right: auto;

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import useModal from "../../hooks/useModal";
+
+import api from "../../services/api";
 
 import Logo from "../../components/Logo";
 import PrimaryButton from "../../components/Button/primary";
@@ -21,7 +23,20 @@ import {
 
 export default function Navbar({ history }) {
   const [type, setType] = useState("");
+  const [userInfo, setUserInfo] =  useState({});
   const { isShowing, toggle } = useModal();
+
+  useEffect(() => {
+    const getUserInfo = async () => {
+      // const userInfo = await api.get(`userinfo/${window.localStorage.getItem("userId")}`);
+      // console.log(userInfo.data)
+      // setUserInfo(userInfo.data)
+    }
+
+    getUserInfo();
+
+    console.log(userInfo)
+  }, window.localStorage.getItem("userId"))
 
   const handleLogin = () => {
     setType("login");

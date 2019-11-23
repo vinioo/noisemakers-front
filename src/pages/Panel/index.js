@@ -67,7 +67,7 @@ export default function Panel() {
       />
 
       <Navbar></Navbar>
-      <ContainerFull>
+      <ContainerFull borderBottom="3.5px solid rgba(0,0,0,.10)">
         <Container>
           <PanelFirstBase>
             <h4>Recomendado para você</h4>
@@ -91,7 +91,7 @@ export default function Panel() {
           </PanelFirstBase>
         </Container>
       </ContainerFull>
-      <ContainerFull boxShadow="0px 15px 10px -15px #111 ">
+      <ContainerFull>
         <Container>
           <PanelSecondContent>
             <PanelSecondLeftItem>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Crowd from "../../assets/images/crowd.jpg";
 
 export const FirstBase = styled.div`
   display: flex;
@@ -99,12 +100,6 @@ export const ThirdItem = styled.div`
   width: 33.33%;
   height: auto;
   min-height: 300px;
-  img {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    margin-bottom: 32px;
-  }
   h5 {
     width: 320px;
     text-align: center;
@@ -116,6 +111,15 @@ export const ThirdItem = styled.div`
     font-weight: 400;
   }
 `;
+export const PersonImage = styled.div`
+  width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    background: url(${props => props.image && props.image});
+    background-position: center;
+    background-size: cover;
+`
 
 export const FourthContent = styled.div`
   display: flex;
@@ -125,6 +129,9 @@ export const FourthContent = styled.div`
   text-align: center;
   height: 500px;
   color: #042c4d;
+  background: 
+  background-size: cover;
+  background-position: center;
   h3 {
     margin-bottom: 16px;
   }
