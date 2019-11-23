@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Instruments from "../../defines/instruments";
 import { toBase64 } from "../../util";
 
-import Navbar from "../../components/Navbar";
+import NavbarReturn from "../../components/NavbarReturn";
 
 import { Container } from "../../style/global";
 
@@ -51,7 +51,7 @@ export default function UserInfo({ history }) {
 
   return (
     <>
-      <Navbar></Navbar>
+      <NavbarReturn></NavbarReturn>
       <Container>
         <UserInfoContent>
           <LeftContent>

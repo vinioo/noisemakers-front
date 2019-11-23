@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import api from "../../services/api";
 
+import { css } from "@emotion/core";
+import BeatLoader from "react-spinners/BeatLoader";
+
 import { toImage } from "../../util";
 
 import Navbar from "../../components/Navbar";
@@ -22,7 +25,8 @@ import {
   PanelSecondRightItem,
   PanelSecondSquaresBase,
   PanelSecondSquare,
-  PanelSecondInfo
+  PanelSecondInfo,
+  LoaderContainer
 } from "./styles";
 
 import ImageTest from "../../assets/images/singer1.jpg";
@@ -30,25 +34,38 @@ import ImageTest from "../../assets/images/singer1.jpg";
 export default function Panel() {
   const [users, setUsers] = useState([]);
   const [bands, setBands] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getSampleUsers = async () => {
+      setLoading(true);
       const response = await api.get("getAllUserInfoSample");
-      setUsers(response.data);
+      setUsers(response.data, setLoading(false));
     };
     const getSampleBands = async () => {
       const response = await api.get("getAllBandInfoSample");
       setBands(response.data);
     };
-    getSampleUsers();
     getSampleBands();
+    getSampleUsers();
   }, []);
 
-  if (users.length > 0) {
-  }
+  const override = css`
+    position: absolute;
+    left: 50%;
+    top: 40%;
+  `;
 
   return (
     <>
+      <BeatLoader
+        css={override}
+        sizeUnit={"px"}
+        size={20}
+        color={"#2BD4C3"}
+        loading={loading}
+      />
+
       <Navbar></Navbar>
       <ContainerFull>
         <Container>

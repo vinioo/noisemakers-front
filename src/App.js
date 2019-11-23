@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Homepage from "./pages/Homepage";
 import Panel from "./pages/Panel";
 import BandInfo from "./pages/BandInfo";
@@ -10,6 +13,17 @@ import NewBand from "./pages/NewBand";
 function App() {
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange
+        draggable
+        pauseOnHover
+      />
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Homepage} />

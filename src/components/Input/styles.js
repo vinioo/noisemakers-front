@@ -14,6 +14,10 @@ export const InputCustom = styled.input`
     color: #335d80;
     font-weight: 400;
   }
+  :focus {
+    box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #0D3F67;
+  }
 `;
 
 export const LightInputBase = styled.input`
@@ -30,6 +34,10 @@ export const LightInputBase = styled.input`
   ::placeholder {
     color: #335d80;
     font-weight: 400;
+  }
+  :focus {
+    box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #0D3F67;
   }
 `;
 

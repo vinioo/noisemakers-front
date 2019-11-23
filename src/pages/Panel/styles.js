@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const PanelFirstBase = styled.div`
   h4 {
@@ -72,7 +72,8 @@ export const PanelSecondSquaresBase = styled.div`
 export const PanelSecondSquare = styled(Link)`
   width: 47%;
   height: 200px;
-  background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(${props => (props.src ? props.src : "black")});
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(${props => (props.src ? props.src : "black")});
   background-position: center;
   background-size: cover;
   margin-bottom: 16px;
@@ -96,3 +97,4 @@ export const PanelSecondInfo = styled.div`
     margin-bottom: 88px;
   }
 `;
+
