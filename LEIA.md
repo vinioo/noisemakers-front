@@ -36,3 +36,6 @@ https://documenter.getpostman.com/view/7376719/SW7c3TM8
 
 **VIDEO NO YOUTUBE**
 https://www.youtube.com/watch?v=0dqMtz6wUdg
+
+**LINK PARA DOWNLOAD NO DRIVE**
+https://drive.google.com/file/d/1mYa7UuzZpzWK_RvVoOBYZoY9MYIna7Ja/view?usp=sharing
