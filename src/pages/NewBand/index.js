@@ -26,6 +26,8 @@ export default function NewBand({ history }) {
   const [city, setCity] = useState("");
   const [image, setImage] = useState("");
   const [banner, setBanner] = useState("");
+  const [skill, setSkill] = useState("");
+
 
   const handleSubmit = async e => {
     try {
@@ -42,7 +44,7 @@ export default function NewBand({ history }) {
       const response = await api.post("band", {
         userId: window.localStorage.getItem("userId") || 1,
         name: name,
-        genre: 1,
+        genre: skill,
         city: city,
         qttyMembers: members,
         description: description,
@@ -63,7 +65,7 @@ export default function NewBand({ history }) {
         <UserInfoContent>
           <LeftContent>
             <h5>Escolha o gênero da banda</h5>
-            <SkillContainer itens={Genres}></SkillContainer>
+            <SkillContainer setSkill={setSkill} itens={Genres}></SkillContainer>
           </LeftContent>
           <RightContent>
             <h5>Complete o seu cadastro</h5>
