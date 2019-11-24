@@ -49,6 +49,11 @@ export default function Navbar({ history }) {
     toggle();
   };
 
+  const handleSignout = () => {
+    window.localStorage.clear();
+    history.push("/");
+  };
+
   return (
     <>
       <LoginModal
@@ -75,7 +80,11 @@ export default function Navbar({ history }) {
                 <UserContainer>
                   <UserInfo> Vinicius Oliveira</UserInfo>
                   <UserAlert src={NotificationIcon}></UserAlert>
-                  <UserImage onClick={() => history.push("/userinfo")} image={userInfo.picture} />
+                  <UserImage
+                    onClick={() => history.push("/userinfo")}
+                    image={userInfo.picture}
+                  />
+                  <p onClick={handleSignout}>Sair</p>
                 </UserContainer>
               ) : (
                 <>

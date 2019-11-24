@@ -31,7 +31,7 @@ import {
 
 import ImageTest from "../../assets/images/music-band-performing-in-front-of-building-1778810.jpg";
 
-export default function Panel() {
+export default function Panel({ history }) {
   const [users, setUsers] = useState([]);
   const [bands, setBands] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -66,7 +66,7 @@ export default function Panel() {
         loading={loading}
       />
 
-      <Navbar></Navbar>
+      <Navbar history={history}></Navbar>
       <ContainerFull boxShadow="0 0px 0px rgba(0,0,0,0.25), 0 8px 10px rgba(0,0,0,0.22)">
         <Container>
           <PanelFirstBase>

@@ -44,7 +44,7 @@ export const ButtonsBase = styled.div`
 `;
 
 export const UserContainer = styled.div`
-  width: 220px;
+  width: 280px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -57,6 +57,7 @@ export const UserImage = styled.div`
   border-radius: 50%;
   background: red;
   margin-left: 16px;
+  margin-right: 16px;
   background: url(${props => props.image && props.image});
   background-size: cover;
   background-position: center;

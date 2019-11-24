@@ -58,7 +58,7 @@ export default function NewBand({ history }) {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar history={history}></Navbar>
       <Container>
         <UserInfoContent>
           <LeftContent>

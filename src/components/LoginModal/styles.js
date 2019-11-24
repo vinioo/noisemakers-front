@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LoginModalBase = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 50%;
   left: 50%;

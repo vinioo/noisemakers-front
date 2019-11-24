@@ -32,7 +32,7 @@ import AcousticIcon from "../../assets/icons/4-guitar 1.svg";
 import GuitarIcon from "../../assets/icons/3-electric guitar 1.svg";
 import CajonIcon from "../../assets/icons/1-cajon 1.svg";
 
-export default function BandInfo({ match }) {
+export default function BandInfo({ match, history }) {
   const [bandInfo, setBandInfo] = useState({});
   const [genre, setGenre] = useState("");
 
@@ -52,7 +52,7 @@ export default function BandInfo({ match }) {
 
   return (
     <ContainerFull>
-      <Navbar></Navbar>
+      <Navbar history={history}></Navbar>
       <Container>
         <Panel src={bandInfo.bigImage}>
           <PanelContent>
