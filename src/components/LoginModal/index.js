@@ -38,7 +38,7 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
       const res = await api.post("login", { email, password });
 
       localStorage.setItem("userId", res.data.id);
-      history.push("/userInfo");
+      history.push("/panel");
     } catch (err) {
       notify("Email ou senha inválidos!");
     }
@@ -52,7 +52,7 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
       localStorage.setItem("userId", res.data.id);
       history.push("/userInfo");
     } catch (err) {
-      notify("Email ou senha inválidos!");
+      notify("Usuário já cadastrado!");
     }
   };
 

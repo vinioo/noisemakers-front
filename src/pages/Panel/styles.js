@@ -22,13 +22,25 @@ export const PanelLeftItem = styled.div`
   img {
     width: 578px;
     height: 310px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 `;
 
 export const PanelRightItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 40%;
   h4 {
     margin: 0;
+    :after {
+      content: "";
+      display: block;
+      width: 25%;
+      padding-top: 8px;
+      border-bottom: 3.5px solid #2bd4c3;
+    }
   }
 `;
 
@@ -91,10 +103,22 @@ export const PanelSecondInfo = styled.div`
   text-align: center;
   color: #042c4d;
   h5 {
+    padding-top: 16px;
     margin-bottom: 32px;
+    :before {
+      content: "";
+      display: block;
+      width: 10%;
+      margin: 0 auto;
+      margin-bottom: 24px;
+      border-bottom: 3.5px solid #2bd4c3;
+    }
   }
   button {
     margin-bottom: 88px;
   }
 `;
 
+export const BandImage = styled.img`
+  border-radius: 6px;
+`;

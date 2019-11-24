@@ -67,4 +67,13 @@ export const UserAlert = styled.div`
   height: 15px;
   background: green;
   margin-left: 16px;
-`
+`;
+export const ReturnIconBase = styled.img`
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+  }
+`;

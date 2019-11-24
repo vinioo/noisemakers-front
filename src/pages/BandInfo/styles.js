@@ -39,7 +39,7 @@ export const PanelContent = styled.div`
 
 export const BandInfoContent = styled.div`
   padding: 80px 0px;
-
+  bandinfo
   width: 100%;
   display: flex;
   flex-direction: row;

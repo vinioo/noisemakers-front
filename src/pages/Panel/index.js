@@ -26,10 +26,10 @@ import {
   PanelSecondSquaresBase,
   PanelSecondSquare,
   PanelSecondInfo,
-  LoaderContainer
+  BandImage
 } from "./styles";
 
-import ImageTest from "../../assets/images/singer1.jpg";
+import ImageTest from "../../assets/images/music-band-performing-in-front-of-building-1778810.jpg";
 
 export default function Panel() {
   const [users, setUsers] = useState([]);
@@ -67,13 +67,13 @@ export default function Panel() {
       />
 
       <Navbar></Navbar>
-      <ContainerFull borderBottom="3.5px solid rgba(0,0,0,.10)">
+      <ContainerFull boxShadow="0 0px 0px rgba(0,0,0,0.25), 0 8px 10px rgba(0,0,0,0.22)">
         <Container>
           <PanelFirstBase>
             <h4>Recomendado para você</h4>
             <PanelFirstContent>
               <PanelLeftItem>
-                <img src={ImageTest} alt="band image" />
+                <BandImage src={ImageTest} alt="band image" />
               </PanelLeftItem>
               <PanelRightItem>
                 <h4>The authorators</h4>
@@ -91,7 +91,11 @@ export default function Panel() {
           </PanelFirstBase>
         </Container>
       </ContainerFull>
-      <ContainerFull>
+      <ContainerFull
+        background="inherit"
+        boxShadow="0 0px 0px rgba(0,0,0,0.12), 0 0px 0px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)"
+      >
         <Container>
           <PanelSecondContent>
             <PanelSecondLeftItem>
@@ -120,10 +124,10 @@ export default function Panel() {
               </PanelSecondSquaresBase>
             </PanelSecondRightItem>
           </PanelSecondContent>
-          <PanelSecondInfo>
-            <h5>Não encontrou o que desejava? Crie a sua própria banda!</h5>
-            <CtaButton>Criar banda</CtaButton>
-          </PanelSecondInfo>
+            <PanelSecondInfo>
+              <h5>Não encontrou o que desejava? Crie a sua própria banda!</h5>
+              <CtaButton path="newband">Criar banda</CtaButton>
+            </PanelSecondInfo>
         </Container>
       </ContainerFull>
       <Footer />

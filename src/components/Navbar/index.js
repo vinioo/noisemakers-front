@@ -8,6 +8,8 @@ import Logo from "../../components/Logo";
 import PrimaryButton from "../../components/Button/primary";
 import LoginModal from "../LoginModal";
 
+import NotificationIcon from "../../assets/icons/notification.svg";
+
 import { Container } from "../../style/global";
 import {
   NavbarBase,
@@ -23,20 +25,19 @@ import {
 
 export default function Navbar({ history }) {
   const [type, setType] = useState("");
-  const [userInfo, setUserInfo] =  useState({});
+  const [userInfo, setUserInfo] = useState({});
   const { isShowing, toggle } = useModal();
 
   useEffect(() => {
     const getUserInfo = async () => {
-      // const userInfo = await api.get(`userinfo/${window.localStorage.getItem("userId")}`);
-      // console.log(userInfo.data)
-      // setUserInfo(userInfo.data)
-    }
+      const userInfo = await api.get(
+        `userinfo/${window.localStorage.getItem("userId")}`
+      );
+      setUserInfo(userInfo.data);
+    };
 
     getUserInfo();
-
-    console.log(userInfo)
-  }, window.localStorage.getItem("userId"))
+  }, [window.localStorage.getItem("userId")]);
 
   const handleLogin = () => {
     setType("login");
@@ -73,8 +74,8 @@ export default function Navbar({ history }) {
               {window.localStorage.getItem("userId") > 0 ? (
                 <UserContainer>
                   <UserInfo> Vinicius Oliveira</UserInfo>
-                  <UserAlert></UserAlert>
-                  <UserImage />
+                  <UserAlert src={NotificationIcon}></UserAlert>
+                  <UserImage onClick={() => history.push("/userinfo")} image={userInfo.picture} />
                 </UserContainer>
               ) : (
                 <>

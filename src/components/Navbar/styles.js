@@ -25,6 +25,7 @@ export const ListBase = styled.div`
     flex-direction: row;
     li {
       margin-right: 32px;
+      cursor: pointer;
     }
   }
 `;
@@ -56,15 +57,27 @@ export const UserImage = styled.div`
   border-radius: 50%;
   background: red;
   margin-left: 16px;
+  background: url(${props => props.image && props.image});
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    transition: all ease-in-out .2s;
+  }
 `;
 
 export const UserInfo = styled.p`
   color: #042c4d;
 `;
 
-export const UserAlert = styled.div`
-  width: 15px;
-  height: 15px;
-  background: green;
+export const UserAlert = styled.img`
+  width: 20px;
+  height: 20px;
   margin-left: 16px;
-`
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out .2s;
+  }
+`;

@@ -4,8 +4,13 @@ import Skill from "../Skill";
 
 import { SkillContainerBase } from "./styles";
 
-export default function SkillContainer({ itens }) {
+export default function SkillContainer({ itens, setSkill }) {
   const [chosen, setChosen] = useState();
+
+  const handleChoose = (item) => {
+    setChosen(item);
+    setSkill(item);
+  }
 
   return (
     <SkillContainerBase>
@@ -16,7 +21,7 @@ export default function SkillContainer({ itens }) {
           id={item.id}
           alt={item.alt}
           active={item.id === chosen}
-          onClick={() => setChosen(item.id)}
+          onClick={() => handleChoose(item.id)}
         >
           {item.name}
         </Skill>

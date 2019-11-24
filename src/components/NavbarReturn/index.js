@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-import useModal from "../../hooks/useModal";
+import { Link } from "react-router-dom";
 
 import Logo from "../../components/Logo";
-import PrimaryButton from "../../components/Button/primary";
-import LoginModal from "../LoginModal";
 
 import { Container } from "../../style/global";
 import {
@@ -13,34 +11,14 @@ import {
   LogoBase,
   ListBase,
   ButtonsBase,
-  UserContainer,
-  UserImage,
-  UserInfo,
-  UserAlert
+  ReturnIconBase
 } from "./styles";
 
+import ReturnIcon from "../../assets/icons/return-arrow.svg";
+
 export default function Navbar({ history }) {
-  const [type, setType] = useState("");
-  const { isShowing, toggle } = useModal();
-
-  const handleLogin = () => {
-    setType("login");
-    toggle();
-  };
-
-  const handleSignup = () => {
-    setType("signup");
-    toggle();
-  };
-
   return (
     <>
-      <LoginModal
-        isShowing={isShowing}
-        hide={toggle}
-        type={type}
-        history={history}
-      ></LoginModal>
       <NavbarBase>
         <Container>
           <NavbarContent>
@@ -55,7 +33,9 @@ export default function Navbar({ history }) {
               </ul>
             </ListBase>
             <ButtonsBase>
-              Retornar
+              <Link to="/">
+                <ReturnIconBase src={ReturnIcon}></ReturnIconBase>
+              </Link>
             </ButtonsBase>
           </NavbarContent>
         </Container>

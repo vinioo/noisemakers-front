@@ -19,14 +19,18 @@ import {
   ThirdContent,
   ThirdItem,
   FourthContent,
-  PersonImage
+  PersonImage,
+  Image,
+  Icon
 } from "./styles";
 
 import HomeImage from "../../assets/images/home.png";
-import SecondImage from "../../assets/images/second.jpg";
+import SecondImage from "../../assets/images/man-holding-microphone-2167139.jpg";
 import Boy1 from "../../assets/images/boy1.jpg";
 import Boy2 from "../../assets/images/boy2.jpg";
 import Woman1 from "../../assets/images/woman1.jpg";
+import ExternalIcon from "../../assets/icons/external-link-symbol.svg";
+import YoutubeIcon from "../../assets/icons/youtube.svg";
 
 export default function Homepage({ history }) {
   return (
@@ -66,7 +70,7 @@ export default function Homepage({ history }) {
           </SecondHeader>
           <SecondContent>
             <SecondContentFirstItem>
-              <img src={SecondImage}></img>
+              <Image background={SecondImage}></Image>
             </SecondContentFirstItem>
             <SecondContentSecondItem>
               <h3>The authorators</h3>
@@ -74,8 +78,8 @@ export default function Homepage({ history }) {
                 Conheça mais da primeira banda formada utilizando a plataforma,
                 os authorators esbanjam talento pelo Brasil a fora.
               </h6>
-              <PrimaryButton>Visitar página</PrimaryButton>
-              <SecondaryButton>Ver no youtube</SecondaryButton>
+              <PrimaryButton><Icon src={ExternalIcon}></Icon>Visitar página</PrimaryButton>
+              <SecondaryButton><Icon src={YoutubeIcon}></Icon>Ver no youtube</SecondaryButton>
             </SecondContentSecondItem>
           </SecondContent>
         </Container>
@@ -95,18 +99,13 @@ export default function Homepage({ history }) {
             </ThirdItem>
             <ThirdItem>
               <PersonImage image={Boy2}></PersonImage>
-              <h5>
-                "Lorem Ipsum é simplesmente uma simulação de texto da indústria"
-              </h5>
-              <p>- Vinicius</p>
+              <h5>"Plataforma mágica, finalmente encontrei minha banda."</h5>
+              <p>- Gabriel Desint</p>
             </ThirdItem>
             <ThirdItem>
               <PersonImage image={Woman1}></PersonImage>
-              <h5>
-                "Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                tipográfica"
-              </h5>
-              <p>- Vinicius</p>
+              <h5>"Simplesmente sensacional."</h5>
+              <p>- Ana Bruna</p>
             </ThirdItem>
           </ThirdContent>
         </Container>
