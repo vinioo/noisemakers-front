@@ -12,7 +12,7 @@ export default function Footer() {
       <Container>
         <FooterBase>
           <LogoWhite></LogoWhite>
-          <p>Made with by Vinicius</p>
+          <p>Made with <span style={{color: "#e25555"}}>&hearts;</span> by Vinioo</p>
         </FooterBase>
       </Container>
     </ContainerFull>

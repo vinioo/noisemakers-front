@@ -34,15 +34,17 @@ export const PanelContent = styled.div`
   color: #F2F4F6;
   h6 {
     margin-bottom: 16px;
+    font-weight: 400;
+    letter-spacing: 1.05px;
   }
 `;
 
 export const BandInfoContent = styled.div`
   padding: 80px 0px;
-  bandinfo
   width: 100%;
   display: flex;
   flex-direction: row;
+  color: #042c4d;
 `;
 export const BandInfoLeftSide = styled.div`
   h5 {
@@ -63,7 +65,7 @@ export const BandMember = styled.div`
   margin-bottom: 16px;
   img {
     width: 30%;
-    height: 100px;
+    height: 140px;
   }
 `;
 
@@ -89,3 +91,14 @@ export const BandInfoRightSide = styled.div`
     margin-bottom: 32px;
   }
 `;
+
+export const IconContainer = styled.div`
+  display: flex;
+`
+
+export const Icon = styled.img`
+  width: 24px !important;
+  height: 24px !important;
+  margin-left: 8px;
+  margin-right: 8px;
+`
