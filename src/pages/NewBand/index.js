@@ -86,7 +86,7 @@ export default function NewBand({ history }) {
                   onChange={e => setCity(e.target.value)}
                 ></LightInput>
                 <LightInput
-                  placeholder="Descrição"
+                  placeholder="Descrição (min 32)"
                   onChange={e => setDescription(e.target.value)}
                 ></LightInput>
                 <p>Imagem de perfil</p>

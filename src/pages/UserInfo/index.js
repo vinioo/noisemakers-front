@@ -72,7 +72,7 @@ export default function UserInfo({ history }) {
                   onChange={e => setName(e.target.value)}
                 ></LightInput>
                 <LightInput
-                  placeholder="Descrição"
+                  placeholder="Descrição (min 32)"
                   onChange={e => setDescription(e.target.value)}
                 ></LightInput>
                 <LightInput

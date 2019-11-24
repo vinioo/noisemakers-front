@@ -28,3 +28,6 @@ docker run --rm   --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -
 **DOCUMENTAÇÃO POSTMAN DA API**
 
 https://documenter.getpostman.com/view/7376719/SW7c3TM8
+
+**VIDEO NO YOUTUBE**
+https://www.youtube.com/watch?v=0dqMtz6wUdg

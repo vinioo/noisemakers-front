@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 
 import { notify } from "../../util";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import api from "../../services/api";
 
 import Logo from "../Logo";
@@ -61,6 +64,17 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
   return isShowing
     ? ReactDOM.createPortal(
         <>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable
+            pauseOnHover
+          />
           <LoginModalBase>
             <LoginModalContent>
               <Logo></Logo>
