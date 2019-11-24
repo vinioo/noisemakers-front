@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { toast } from "react-toastify";
+
+import { notify } from "../../util";
 
 import api from "../../services/api";
 
@@ -21,23 +22,13 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const notify = message =>
-    toast.error(message, {
-      position: "top-bottom",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true
-    });
-
   const handleLoginSubmit = async e => {
     try {
       e.preventDefault();
 
       const res = await api.post("login", { email, password });
 
-      localStorage.setItem("userId", res.data.id);
+      localStorage.setItem("userId", res.data.id, hide());
       history.push("/panel");
     } catch (err) {
       notify("Email ou senha inválidos!");
@@ -49,7 +40,7 @@ const LoginModal = ({ isShowing, hide, type, history }) => {
       e.preventDefault();
 
       const res = await api.post("signup", { email, password });
-      localStorage.setItem("userId", res.data.id);
+      localStorage.setItem("userId", res.data.id, hide());
       history.push("/userInfo");
     } catch (err) {
       notify("Usuário já cadastrado!");

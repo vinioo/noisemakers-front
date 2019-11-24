@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Instruments from "../../defines/instruments";
-import { toBase64 } from "../../util";
+
+import { toBase64, notify } from "../../util";
 
 import NavbarReturn from "../../components/NavbarReturn";
 
@@ -49,7 +50,7 @@ export default function UserInfo({ history }) {
 
       history.push("/panel");
     } catch (err) {
-      console.log(err);
+      notify("Verifique os campos do formulário!")
     }
   };
 

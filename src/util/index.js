@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const toBase64 = file =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -11,3 +13,13 @@ export const toImage = picture => {
   image.src = picture;
   return image.src;
 };
+
+export const notify = message =>
+  toast.error(message, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
+  });

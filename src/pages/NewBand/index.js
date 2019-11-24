@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Genres from "../../defines/genres";
-import { toBase64 } from "../../util";
+
+import { toBase64, notify } from "../../util";
 
 import Navbar from "../../components/Navbar";
 
@@ -54,7 +55,7 @@ export default function NewBand({ history }) {
 
       history.push("/panel");
     } catch (err) {
-      console.log(err);
+      notify("Verifique os campos do formulário!")
     }
   };
 
