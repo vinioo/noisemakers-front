@@ -1,6 +1,6 @@
 # Requisitos para inicicalização
 - NodeJS
-- NPM
+- NPM ou yarn
 - Spring boot
 - Gradle
 - Docker
